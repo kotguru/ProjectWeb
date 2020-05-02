@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="rus">
+<head>
+    <meta charset="UTF-8">
+    <title>My website</title>
+</head>
+<body>
+    <form method="POST">
+        <p align="center" style="color:#000000; font-size:50px">
+            Добро пожаловать на вебсайт Костяна!
+        </p>
+
+    <div style="margin-left:20Vw";>
+        <p align="left" style="color:#000000; font-size:20px">
+            Этот сайт предназначен для предсказания ламинарно-турбулентного перехода в плоском потоке Куэтта.
+            <br>
+                Перед тем, как начать совершать предсказания, рекомендую ознакомиться с имеющейся информацией:
+            </br>
+        </p>
+
+        <a href="http://127.0.0.1:8000/full_data">
+             <div style="margin-left:0";>
+                Раздел I. Визуализация исходных данных.
+            </div>
+        </a>
+
+        <a href="http://127.0.0.1:8000/laminar_data_histogram">
+             <div style="margin-left:0";>
+                 Раздел II. Визуальный анализ исходных данных для ламинарного потока.
+            </div>
+        </a>
+
+        <a href="http://127.0.0.1:8000/turbulence_data_histogram">
+             <div style="margin-left:0";>
+                Раздел III. Визуальный анализ исходных данных для турбулентного потока.
+            </div>
+        </a>
+
+        <p align="left" style="color:#000000; font-size:20px">
+            Теперь можно попробовать сделать предсказания для новых исходных данных.
+            <br>
+                Чтобы рассчитать ответ, необходимо ввести информацию о характеристиках потока в форму ниже.
+            </br>
+        </p>
+
+{#        <br>#}
+{#        <p>Введите коэффициент A:</p>#}
+{#        <input type="text" size="10">#}
+{#        </br>#}
+{##}
+{#        <br>#}
+{#        <p>Введите коэффициент B:</p>#}
+{#        <input type="text" size="10">#}
+{#        </br>#}
+{##}
+{#        <br>#}
+{#        <p>Введите коэффициент C:</p>#}
+{#        <input type="text" size="10">#}
+{#        </br>#}
+{##}
+{#        <br></br>#}
+{#        <button type="button">Предсказать</button>#}
+
+        {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <input type="submit" value="Send" >
+    </div>
+    </form>
+</body>
+</html>
