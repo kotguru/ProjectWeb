@@ -1,16 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="rus">
 <head>
+{#    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">#}
+{#    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">#}
+    <link rel="stylesheet" href="{% static "css/start_page.css" %}">
     <meta charset="UTF-8">
     <title>My website</title>
 </head>
 <body>
-    <form method="POST">
-        <p align="center" style="color:#000000; font-size:50px">
-            Добро пожаловать на вебсайт Костяна!
-        </p>
+{#        style="background: dodgerblue">#}
+{#<link rel="stylesheet" href="../static/css/start_page.css">#}
+{#linear-gradient(dodgerblue, indianred)">#}
+        <h1 align="center" style="padding: 20px 20px 20px 40px;
+        color: blue; font-size: 40pt; font-family: 'Lobster', cursive;">
+            Добро пожаловать на мой вебсайт
+        </h1>
 
-    <div style="margin-left:20Vw";>
+    <div style="margin-left:20Vw; margin-right: 20Vw; width: auto";>
         <p align="left" style="color:#000000; font-size:20px">
             Этот сайт предназначен для предсказания ламинарно-турбулентного перехода в плоском потоке Куэтта.
             <br>
@@ -18,7 +25,7 @@
             </br>
         </p>
 
-        <a href="http://127.0.0.1:8000/full_data">
+        <a href="http://127.0.0.1:8000/full_data" >
              <div style="margin-left:0";>
                 Раздел I. Визуализация исходных данных.
             </div>
@@ -30,7 +37,7 @@
             </div>
         </a>
 
-        <a href="http://127.0.0.1:8000/turbulence_data_histogram">
+        <a href="http://127.0.0.1:8000/turbulence_data_histogram" >
              <div style="margin-left:0";>
                 Раздел III. Визуальный анализ исходных данных для турбулентного потока.
             </div>
@@ -60,12 +67,14 @@
 {##}
 {#        <br></br>#}
 {#        <button type="button">Предсказать</button>#}
-
-        {% csrf_token %}
-        <table>
+        <div align="center" style="width: max-content; margin-left: 30%">
+            <form method="POST">
+            {% csrf_token %}
+            <table>
             {{ form }}
-        </table>
-        <input type="submit" value="Send" >
+            </table>
+        <input id="inp" type="submit" value="Input">
+        </div>
     </div>
     </form>
 </body>
