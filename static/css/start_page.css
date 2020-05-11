@@ -1,17 +1,18 @@
 {% load static %}
 body{
-    background-image: url("../voda.jpg");
+    /*background-image: url("../voda.jpg");*/
+    background: #4830F0;
 }
 
 a {
-    color: darkorange;
+    color: darkgray;
     font-weight: 700;
     text-shadow: none;
   text-decoration: none;
 }
 
 a::before {
-    color: indianred;
+    color: darkgray;
     content: attr(data-hover);
     position: absolute;
     transition: transform 0.3s, opacity 0.3s;
